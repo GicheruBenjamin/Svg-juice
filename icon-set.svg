@@ -1,0 +1,31 @@
+<svg width="300" height="100" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="iconGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="red"/>
+      <stop offset="100%" stop-color="orange"/>
+    </linearGradient>
+
+    <linearGradient id="iconGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="blue"/>
+      <stop offset="100%" stop-color="purple"/>
+    </linearGradient>
+
+    <linearGradient id="iconGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="green"/>
+      <stop offset="100%" stop-color="lightgreen"/>
+    </linearGradient>
+  </defs>
+
+  <path d="M30,90 L60,30 L90,90 Z" fill="url(#iconGradient1)" class="icon"/>
+  <path d="M110,90 Q140,20 170,90 T230,90" fill="none" stroke="url(#iconGradient2)" stroke-width="5" class="icon"/>
+  <path d="M250,50 C270,20 310,20 290,50 S250,80 270,50" fill="none" stroke="url(#iconGradient3)" stroke-width="5" class="icon"/>
+
+  <style>
+    .icon {
+      transition: transform 0.3s;
+    }
+    .icon:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</svg>
