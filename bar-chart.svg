@@ -1,0 +1,33 @@
+<svg width="500" height="300" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="barGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4A90E2"/>
+      <stop offset="100%" stop-color="#007AFF"/>
+    </linearGradient>
+    
+    <pattern id="barPattern" patternUnits="userSpaceOnUse" width="10" height="10">
+      <rect width="10" height="10" fill="white"/>
+      <circle cx="5" cy="5" r="3" fill="blue"/>
+    </pattern>
+  </defs>
+
+  <g transform="translate(50,50)">
+    <rect x="0" y="50" width="50" height="200" fill="url(#barGradient)" class="bar"/>
+    <rect x="70" y="80" width="50" height="170" fill="url(#barPattern)" class="bar"/>
+    <rect x="140" y="30" width="50" height="220" fill="url(#barGradient)" class="bar"/>
+    <rect x="210" y="100" width="50" height="150" fill="url(#barPattern)" class="bar"/>
+  </g>
+
+  <text x="25" y="270" text-anchor="middle">A</text>
+  <text x="95" y="270" text-anchor="middle">B</text>
+  <text x="165" y="270" text-anchor="middle">C</text>
+  <text x="235" y="270" text-anchor="middle">D</text>
+
+  <style>
+    .bar:hover {
+      transform: scaleY(1.1);
+      transform-origin: bottom;
+      transition: transform 0.3s;
+    }
+  </style>
+</svg>
