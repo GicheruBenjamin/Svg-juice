@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root{
+            /*Root settings*/
+            /*Base 10 rem setting*/
+            font-size: 10px;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;padding: 0;
+        }
+        header{
+            background-color: black;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        main{
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+            padding-left: 15px;
+        }
+        main p{
+            margin: 0; padding: 0;
+            font-size: clamp(1.8rem, 2vw, 2.3rem);
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: bold;
+        }
+        main > img{
+            height: 100%; width: 100%;
+        }
+        main .lesson-one{
+            height: 300px;
+            width: 250px;
+            padding: 0;
+            border: 2px dotted grey;
+        }
+        .lesson-one img{
+            height: 100%;
+            width: 100%;
+        }
+        main .lesson-two{
+            height: 600px;
+            width: 450px;
+            padding: 0;
+            border: 3px solid yellowgreen;
+        }
+        .lesson-two img{
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+    <title>Learn svg</title>
+</head>
+<body>
+    <header>
+        <h1>Learn svg</h1>
+    </header>
+    <main>
+        <section>
+            <p>Lesson one</p>
+            <div class="lesson-one">
+                <img src="./lessonone.svg" alt="">
+            </div>
+            <p>Lesson two</p>
+            <div class="lesson-two">
+                <img src="./lessontwoelements.svg" alt="">
+            </div>
+        </section>
+    </main>
+    
+</body>
+</html>
