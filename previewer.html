@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SVG Path Previewer</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 2rem;
+      background: #f4f4f4;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+
+    form {
+      margin-bottom: 1rem;
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    input, textarea, button {
+      margin-top: 0.5rem;
+      width: 100%;
+      padding: 8px;
+      font-size: 1rem;
+    }
+
+    label {
+      margin-top: 1rem;
+      display: block;
+    }
+
+    #preview {
+      margin-top: 2rem;
+      background: white;
+      padding: 1rem;
+      border: 1px dashed #ccc;
+      min-height: 300px;
+    }
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+
+    .error {
+      color: red;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>SVG Path Generator</h1>
+
+  <form id="svgForm">
+    <label>
+      Path Data (`d` attribute):
+      <textarea id="pathData" rows="4" required placeholder="e.g. M 10 10 L 100 100 Z"></textarea>
+    </label>
+
+    <label>
+      Stroke Color (optional):
+      <input type="text" id="stroke" placeholder="e.g. black">
+    </label>
+
+    <label>
+      Fill Color (optional):
+      <input type="text" id="fill" placeholder="e.g. none">
+    </label>
+
+    <button type="submit">Draw SVG</button>
+    <div class="error" id="errorMsg"></div>
+  </form>
+
+  <div id="preview">
+    <!-- SVG will appear here -->
+  </div>
+
+  <script>
+    const form = document.getElementById('svgForm');
+    const preview = document.getElementById('preview');
+    const errorMsg = document.getElementById('errorMsg');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const d = document.getElementById('pathData').value.trim();
+      const stroke = document.getElementById('stroke').value.trim() || 'black';
+      const fill = document.getElementById('fill').value.trim() || 'none';
+
+      if (!d) {
+        errorMsg.textContent = "Path data is required.";
+        return;
+      }
+
+      try {
+        const svg = `
+          <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+            <path d="${d}" stroke="${stroke}" fill="${fill}" stroke-width="2"/>
+          </svg>
+        `;
+
+        preview.innerHTML = svg;
+        errorMsg.textContent = "";
+      } catch (err) {
+        errorMsg.textContent = "Invalid path data!";
+      }
+    });
+  </script>
+
+</body>
+</html>
